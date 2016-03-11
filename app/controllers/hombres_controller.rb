@@ -1,0 +1,2 @@
+class HombresController < ApplicationController
+end

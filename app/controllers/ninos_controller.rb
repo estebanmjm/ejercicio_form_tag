@@ -1,0 +1,2 @@
+class NinosController < ApplicationController
+end
