@@ -1,0 +1,164 @@
+<h1>Mujeres</h1>
+
+<div >
+    <%= label_tag :name, 'Nombre' %>
+    <%= text_field(:name,"", placeholder: 'digite aqui el primer nombre') %>
+</div>
+
+<div >
+    <%= label_tag :name_2, 'Segundo nombre' %>
+    <%= text_field(:name_2,"", placeholder: 'digite aqui el segundo nombre') %>
+</div>
+
+<div >
+    <%= label_tag :lastname, 'Apellido' %>
+    <%= text_field(:lastname,"", placeholder: 'digite aqui el primer apellido') %>
+</div>
+
+<div >
+    <%= label_tag :lastname_2, 'Segundo apellido' %>
+    <%= text_field(:lastname_2,"", placeholder: 'digite aqui el segundo apellido') %>
+</div>
+
+<div >
+    <%= label_tag  :dob, 'Fecha de nacimiento'  %>
+    <%= date_field(:dob, "") %>
+</div>
+
+<div >
+    <%= label_tag :document, 'Documento de identidad' %>
+    <%= text_field(:document,"", placeholder: 'digite aqui el documento de identidad') %>
+</div>
+
+<div>
+    <%= label_tag :civil_status, 'Estado civil' %>
+    <%= select_tag :civil_status, options_for_select(["Soltera","Casada","Viuda","Divorsiada","En unión libre"])%>
+</div>
+
+<div>
+    <%= label_tag :children, 'Número de hijos' %>
+    <%= text_field(:children,"", placeholder: 'digite aqui el número de hijos') %>
+</div>
+
+<div>
+    <%= label_tag :abortions, 'Número de abortos' %>
+    <%= text_field(:abortions,"", placeholder: 'digite aqui el número de abortos') %>
+</div>
+
+<div >
+    <%= label_tag :pregnancy_odds, 'Problemas con algún el embarazo' %>
+    <%= text_field(:pregnancy_odds,"", placeholder: 'Ingrese problemas que haya tenido con algún embarazo') %>
+</div>
+
+<p>Antecedentes:</p>
+<ul>
+    <li>
+        <div>
+            <%= label_tag(:med_record1, "Cancer de ovarios?") %>
+            <%= label_tag :cancer_ov, "Si" %>
+            <%= radio_button_tag(:med_record1, "si") %>
+
+            <%= label_tag :cancer_ov, "No" %>
+            <%= radio_button_tag(:med_record1, "no") %>
+        </div>
+    </li>
+    <li>
+        <div>
+            <%= label_tag(:med_record2, "Cancer de mamas?") %>
+            <%= label_tag :cancer_m, "Si" %>
+            <%= radio_button_tag(:med_record2, "si") %>
+
+            <%= label_tag :cancer_m, "No" %>
+            <%= radio_button_tag(:med_record2, "no") %>
+        </div>
+    </li>
+    <li>
+        <div>
+            <%= label_tag(:other_cancer, "Otro tipo de cancer?") %>
+            <%= label_tag :otro_c, "Si" %>
+            <%= radio_button_tag(:other_cancer, "si") %>
+
+            <%= label_tag :otro_c, "No" %>
+            <%= radio_button_tag(:other_cancer, "no") %>
+
+            <%= label_tag :med_recordplus1, 'Cual?' %>
+            <%= text_field(:med_recordplus1,"", placeholder: 'Otro tipo de cancer') %>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <%= label_tag(:med_record3, "Hipertensión?") %>
+            <%= label_tag :hipertensión, "Si" %>
+            <%= radio_button_tag(:med_record3, "si") %>
+
+            <%= label_tag :hipertensión, "No" %>
+            <%= radio_button_tag(:med_record3, "no") %>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <%= label_tag(:med_record4, "Diabetes?") %>
+            <%= label_tag :diabetes, "Si" %>
+            <%= radio_button_tag(:med_record4, "si") %>
+
+            <%= label_tag :diabetes, "No" %>
+            <%= radio_button_tag(:med_record4, "no") %>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <%= label_tag(:med_record5, "Alzheimer?") %>
+            <%= label_tag :alzheimer, "Si" %>
+            <%= radio_button_tag(:med_record5, "si") %>
+
+            <%= label_tag :alzheimer, "No" %>
+            <%= radio_button_tag(:med_record5, "no") %>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <%= label_tag(:other_cancer, "Otros?") %>
+            <%= label_tag :otro_c, "Si" %>
+            <%= radio_button_tag(:other, "si") %>
+
+            <%= label_tag :otro_c, "No" %>
+            <%= radio_button_tag(:other_cancer, "no") %>
+
+            <%= label_tag :med_recordplus2, 'Cuales?' %>
+            <%= text_field(:med_recordplus2,"", placeholder: 'ingrese aquí los antecedentes adicionales') %>
+        </div>
+    </li>
+</ul>
+
+<div >
+    <%= label_tag :illnes, 'Enfermedades' %>
+    <%= text_field(:illnes,"", placeholder: 'Ingrese enfermedades que padece') %>
+</div>
+
+<div>
+    <%= label_tag :blood_type, 'Grupo sanguineo' %>
+    <%= select_tag :blood_type, options_for_select(["AB+","AB-","A+","A-","B+","B-","O+","O-"])%>
+</div>
+
+<%= form_tag("/accept-terms", method: "post") do %>
+   <%= label_tag(:terms, "Desea aceptar los terminos y condiciones?") %>
+   <%= check_box_tag(:terms) %>
+   <%= submit_tag("Enviar") %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+

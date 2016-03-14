@@ -1,4 +1,4 @@
-<h1>Kids</h1>
+<h1>Niños</h1>
 
 <div >
     <%= label_tag :name, 'Nombre' %>
@@ -21,18 +21,130 @@
 </div>
 
 <div >
-    <%= label_tag :lastname_2, 'Segundo apellido' %>
-    <%= text_field(:lastname_2,"", placeholder: 'digite aqui el segundo apellido') %>
-</div>
-
-<div >
     <%= label_tag :ti, 'TI o registro civil' %>
     <%= text_field(:ti,"", placeholder: 'digite aqui el registro civil o TI') %>
 </div>
 
-<div >
-    <%= label_tag :age, 'TI o registro civil' %>
-    <%= text_field(:age,"", placeholder: 'digite aqui el registro') %>
+<div>
+    <%= label_tag(:sex, "Sexo") %>
+    <%= label_tag :sex_male, "Hombre" %>
+    <%= radio_button_tag(:sex, "hombre") %>
+
+    <%= label_tag :sex_female, "Mujer" %>
+    <%= radio_button_tag(:sex, "mujer") %>
 </div>
 
+<div >
+    <%= label_tag :age, 'Edad' %>
+    <%= text_field(:age,"", placeholder: 'ingrese aquí la edad') %>
+</div>
+
+<div >
+    <%= label_tag :name_mom, 'Nombre completo de la madre' %>
+    <%= text_field(:name_mom,"", placeholder: 'Nombre de la madre') %>
+</div>
+
+<div >
+    <%= label_tag :name_dad, 'Nombre completo de la padre' %>
+    <%= text_field(:name_dad,"", placeholder: 'Nombre de la padre') %>
+</div>
+
+<div>            
+    <%= label_tag :vaccines, 'Vacunas' %>
+    <br>
+    
+    <%= label_tag :hepatitis %>
+    <%= check_box_tag :hepatitis %>
+
+    <%= label_tag :rotavirus %>
+    <%= check_box_tag :rotavirus %>
+
+    <%= label_tag :varicela %>
+    <%= check_box_tag :varicela %>
+
+    <%= label_tag :tetano %>
+    <%= check_box_tag :tetano %>
+
+    <%= label_tag :influenza %>
+    <%= check_box_tag :influenza %>
+</div>
+
+<div >
+    <%= label_tag  :dob, 'Fecha de nacimiento'  %>
+    <%= date_field(:dob, "") %>
+</div>
+
+
+<p>Antecedentes:</p>
+<ul>
+    <li>
+        <div>
+            <%= label_tag(:med_record1, "Cancer?") %>
+            <%= label_tag :cancer, "Si" %>
+            <%= radio_button_tag(:med_record1, "si") %>
+
+            <%= label_tag :cancer, "No" %>
+            <%= radio_button_tag(:med_record1, "no") %>
+        </div>
+    </li>
+    <li>
+        <div>
+            <%= label_tag(:med_record2, "hipertensión?") %>
+            <%= label_tag :hipertensión, "Si" %>
+            <%= radio_button_tag(:med_record2, "si") %>
+
+            <%= label_tag :hipertensión, "No" %>
+            <%= radio_button_tag(:med_record2, "no") %>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <%= label_tag(:med_record3, "Diabetes?") %>
+            <%= label_tag :diabetes, "Si" %>
+            <%= radio_button_tag(:med_record3, "si") %>
+
+            <%= label_tag :diabetes, "No" %>
+            <%= radio_button_tag(:med_record3, "no") %>
+        </div>
+    </li>
+    <li>
+        <div>
+            <%= label_tag(:other, "Otros?") %>
+            <%= label_tag :otro, "Si" %>
+            <%= radio_button_tag(:other, "si") %>
+
+            <%= label_tag :otro, "No" %>
+            <%= radio_button_tag(:other, "no") %>
+
+            <%= label_tag :med_recordplus, 'Cuales?' %>
+            <%= text_field(:med_recordplus,"", placeholder: 'ingrese aquí los antecedentes adicionales') %>
+        </div>
+    </li>
+</ul>
+
+<div >
+    <%= label_tag :illnes, 'Enfermedades' %>
+    <%= text_field(:illnes,"", placeholder: 'Ingrese enfermedades que padece') %>
+</div>
+
+<div>
+    <%= label_tag(:malnutrition, "Desnutrición?") %>
+    <%= label_tag :desnutr, "Si" %>
+    <%= radio_button_tag(:malnutrition, "si") %>
+
+    <%= label_tag :desnutr, "No" %>
+    <%= radio_button_tag(:malnutrition, "no") %>
+</div>
+
+<div>
+    <%= label_tag :blood_type, 'Grupo sanguineo' %>
+    <%= select_tag :blood_type, options_for_select(["AB+","AB-","A+","A-","B+","B-","O+","O-"])%>
+</div>
+
+<%= form_tag("/accept-terms", method: "post") do %>
+   <%= label_tag(:terms, "Desea aceptar los terminos y condiciones?") %>
+   <%= check_box_tag(:terms) %>
+   <%= submit_tag("Enviar") %>
+<% end %>
 
