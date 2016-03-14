@@ -1,5 +1,8 @@
 <h1>Mujeres</h1>
 
+<!--<%= form_tag({controller: "mujeres", action: "patients"}, method: "post", class: "nifty_form") do %>-->
+
+
 <div >
     <%= label_tag :name, 'Nombre' %>
     <%= text_field(:name,"", placeholder: 'digite aqui el primer nombre') %>
@@ -144,7 +147,7 @@
     <%= select_tag :blood_type, options_for_select(["AB+","AB-","A+","A-","B+","B-","O+","O-"])%>
 </div>
 
-<%= form_tag("/accept-terms", method: "post") do %>
+
    <%= label_tag(:terms, "Desea aceptar los terminos y condiciones?") %>
    <%= check_box_tag(:terms) %>
    <%= submit_tag("Enviar") %>
